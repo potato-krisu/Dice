@@ -1,21 +1,23 @@
 void setup()
 {
   size(500, 500);
-  background(255);
   noLoop();
 }
 void draw()
 {
+  background(255);
+  int total = 0;
   for (int x = 120; x < 400; x += 100)
   {
     for (int y = 100; y < 400; y += 100)
     {
       Die bob = new Die(x, y);
-      bob.show();
       bob.toss();
+      bob.show();
+      total = total + bob.numDie;
     }
-    System.out.println(numDie);
   }
+  text("total: "+ total, 400,400); 
 }
 void mousePressed()
 {
@@ -33,7 +35,6 @@ class Die
   void toss()
   {
     numDie = (int)(Math.random()*6)+1;
-    }
   }
   void show()
   {
@@ -68,5 +69,6 @@ class Die
       ellipse(myX+34, myY+25, 10, 10); //6 dots, mid right
       ellipse(myX+16, myY+40, 10, 10); //6 dots, bottom right
       ellipse(myX+34, myY+40, 10, 10); //6 dots, bottom left
+    }
   }
 }
