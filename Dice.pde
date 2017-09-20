@@ -17,7 +17,7 @@ void draw()
       total = total + bob.numDie;
     }
   }
-  text("total: "+ total, 400,400); 
+  text("total: "+ total, 400, 400);
 }
 void mousePressed()
 {
